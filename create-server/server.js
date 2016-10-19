@@ -7,7 +7,7 @@ var server = http.createServer(function(req, res) {
 		if(error) {
 			return error;
 		}
-		var name = 'Node';
+		var name = 'Ninja';
 		data = data.replace('{name}', name);
 		res.end(data);
 	});
