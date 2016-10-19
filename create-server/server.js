@@ -3,11 +3,12 @@ var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
 	res.writeHead(200, {'Content-Type': 'text/html'});
-	fs.readFile(__dirname + '/index.html', function(error, data) {
+	fs.readFile(__dirname + '/index.html', 'utf8', function(error, data) {
 		if(error) {
 			return error;
 		}
-
+		var name = 'Node';
+		data = data.replace('{name}', name);
 		res.end(data);
 	});
 });
